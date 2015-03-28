@@ -1,1 +1,126 @@
-hello,world!this is 7log
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>成龙的个人简历页面</title>
+
+    <!-- Bootstrap -->
+    <link href="http://cdn.staticfile.org/twitter-bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		body { background:#0769AD; }
+		#mainpage { margin-top:60px; }
+		#mainpage .panel { background:#FFF; color:#0769AD; }
+		#mainpage .left { text-align:right; }
+		#mainpage .right { background:#0769AD; color:#FFF; margin:0 -5px; padding:10px; }
+		#mainpage h1 { padding:5px; font-size:42px; }
+		#mainpage h3 { margin-top:10px; margin-bottom:5px; }
+		#mainpage .lead { margin:0; }
+		#mainpage .point { color:#a94442; background-color:#f2dede; border-color:#ebccd1; }
+	</style>
+  </head>
+  <body>
+	<div class="container" id="mainpage">
+		<div class="row panel">
+			<div class="col-sm-4 left">
+				<h1 class="tpl-html" data-from="name"> - </h1>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="lead"> - </p>
+			</div>
+		</div>
+		<div class="row panel">
+			<div class="col-sm-4 left">
+				<h3>联系电话</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="phone"> - </p>
+			</div>
+		</div>
+		<div class="row panel">
+			<div class="col-sm-4 left">
+				<h3>E-mail</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="email"> - </p>
+			</div>
+		</div>
+		<div class="row panel">
+			<div class="col-sm-4 left">
+				<h3>QQ</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="qqnum"> - </p>
+			</div>
+		</div>
+		<div class="row panel point">
+			<div class="col-sm-4 left">
+				<h3>期望职位</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="job"> - </p>
+			</div>
+		</div>
+		<div class="row panel point">
+			<div class="col-sm-4 left">
+				<h3>期望薪资</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="money"> - </p>
+			</div>
+		</div>
+		<div class="row panel point">
+			<div class="col-sm-4 left">
+				<h3>期望入职城市</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<p class="lead tpl-html" data-from="city"> - </p>
+			</div>
+		</div>
+		<div class="row panel">
+			<div class="col-sm-4 left">
+				<h3>技能清单</h3>
+			</div>
+			<div class="col-sm-8 right">
+				<dl class="dl-horizontal">
+					<dt>编程语言</dt>
+					<dd>
+						<span class="label label-default">C++</span>
+						<span class="label label-default">C++</span>
+						<span class="label label-default">C++</span>
+						<span class="label label-default">C++</span>
+						<span class="label label-default">C++</span>
+						<span class="label label-default">C++</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+
+    <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+		var arr = {
+			'name':'成龙',
+			'lead':'男，1987年生。<br />闽江学院软件工程学院（大专）2009年毕业。<br />6年以上信息技术相关行业工作经历。',
+			'phone':'13799369023','email':'Q.L@FOXMAIL.COM','qqnum':'775173853',
+			'job':'.Net软件工程师，PHP网页工程师','money':'税前月薪 4200 以上',
+			'city':'福建省福州市'
+		};
+		$(function(){
+			$('.tpl-html').each(function(){
+				var from = $(this).data('from');
+				$(this).html(arr[from]);
+			});
+		});
+	</script>
+  </body>
+</html>
